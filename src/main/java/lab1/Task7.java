@@ -13,14 +13,11 @@ public class Task7 {
             return;
         }
 
-        short num1 = (short) input1;
-        short num2 = (short) input2;
-
-        int sum = (num1 & 0xFFFF) + (num2 & 0xFFFF);
-        int difference = (num1 & 0xFFFF) - (num2 & 0xFFFF);
-        int product = (num1 & 0xFFFF) * (num2 & 0xFFFF);
-        int quotient = (num1 & 0xFFFF) / (num2 & 0xFFFF);
-        int remainder = (num1 & 0xFFFF) % (num2 & 0xFFFF);
+        int sum = (input1 & 0xFFFF) + (input2 & 0xFFFF);
+        int difference = (input1 & 0xFFFF) - (input2 & 0xFFFF);
+        int product = (input1 & 0xFFFF) * (input2 & 0xFFFF);
+        int quotient = (input1 & 0xFFFF) / (input2 & 0xFFFF);
+        int remainder = (input1 & 0xFFFF) % (input2 & 0xFFFF);
 
         // Вывод результатов
         System.out.println(sum & 0xFFFF);
