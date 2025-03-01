@@ -11,7 +11,7 @@ public class Task14 {
             ArrayList<Integer> line = new ArrayList<>();
 
             String lineSource = in.nextLine();
-            String[] lineSourceParts = lineSource.split("\\s+");
+            String[] lineSourceParts = lineSource.split(" ");
             for (String substring : lineSourceParts) {
                 line.add(Integer.parseInt(substring));
             }
