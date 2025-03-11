@@ -1,6 +1,8 @@
 package lab1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Task15 {
@@ -25,6 +27,20 @@ public class Task15 {
             }
             result.getLast().add(1);
         }
-        System.out.println(result);
+
+        int maxNum = Collections.max(result.getLast());
+        int maxNumLen = String.valueOf(maxNum).length();
+
+        for (int i = 0; i < result.size(); i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                System.out.print(" ".repeat(maxNumLen));
+            }
+            for (int num : result.get(i)) {
+                String formatted = String.format("%" + maxNumLen + "d", num);
+                System.out.printf(formatted + " ".repeat(maxNumLen));
+            }
+            System.out.println();
+        }
+
     }
 }
