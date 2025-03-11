@@ -1,12 +1,11 @@
 package lab1;
 
-import java.math.BigDecimal;
 import java.util.Random;
 
 public class Task10 {
     private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-    public static  String getRandom(int size) {
+    public static String getRandom(int size) {
         Random random = new Random();
         StringBuilder builder = new StringBuilder(size);
 

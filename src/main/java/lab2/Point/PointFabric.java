@@ -25,7 +25,7 @@ public class PointFabric {
      * </ul>
      *
      * @param radius the radial distance from the origin (0, 0) in polar space
-     * @param angle the angle (in radians) from the positive x-axis in polar space
+     * @param angle  the angle (in radians) from the positive x-axis in polar space
      * @return a new {@code Point} instance with the equivalent Cartesian coordinates
      */
     public static Point fromPolar(double radius, double angle) {

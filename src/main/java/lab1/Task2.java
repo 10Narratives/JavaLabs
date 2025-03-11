@@ -7,7 +7,7 @@ public class Task2 {
         Scanner in = new Scanner(System.in);
         int value = in.nextInt();
 
-        System.out.println(value%360+360);
+        System.out.println(value % 360 + 360);
         System.out.println(Math.floorMod(value, 360));
     }
 }

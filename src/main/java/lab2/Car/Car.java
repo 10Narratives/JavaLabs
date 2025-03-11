@@ -7,8 +7,8 @@ import lab2.Point.PointModifiable;
  */
 public class Car {
     private final PointModifiable position;
-    private double remainingFuel;
     private final double fuelCosts;
+    private double remainingFuel;
 
     /**
      * Constructs a new {@code Car} instance with the specified fuel level and fuel consumption rate.

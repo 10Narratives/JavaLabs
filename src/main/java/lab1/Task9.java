@@ -9,7 +9,7 @@ public class Task9 {
         s1 = in.nextLine();
         s2 = in.nextLine();
 
-        if (s1.compareTo(s2) == 0 ) {
+        if (s1.compareTo(s2) == 0) {
             System.out.println("strings are equal");
         } else {
             System.out.println("strings are not equal");
