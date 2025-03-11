@@ -1,10 +1,10 @@
 package lab2.Point;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PointModifiableTest {
-
     @Test
     void testDefaultConstructor() {
         PointModifiable point = new PointModifiable();

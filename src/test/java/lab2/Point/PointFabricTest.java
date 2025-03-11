@@ -1,10 +1,10 @@
 package lab2.Point;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PointFabricTest {
-
     @Test
     void testFromCartesian() {
         Point point = PointFabric.fromCartesian(3.0, 4.0);
