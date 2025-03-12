@@ -54,4 +54,15 @@ class IntSequenceTest {
         }
         assertFalse(sequence.hasNext(), "The sequence should be empty after retrieving all elements.");
     }
+
+    @Test
+    void testConstantSequence() {
+        IntSequence sequence = IntSequence.constant(7);
+
+        // Act & Assert
+        for (int i = 0; i < 10; i++) {
+            assertTrue(sequence.hasNext(), "The sequence should always have more elements.");
+            assertEquals(7, sequence.next(), "The next value should always be 7.");
+        }
+    }
 }

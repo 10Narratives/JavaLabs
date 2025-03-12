@@ -41,4 +41,24 @@ public interface IntSequence {
             }
         };
     }
+
+    /**
+     * Creates an infinite IntSequence that always returns the same constant value.
+     *
+     * @param value the constant value to be returned by the sequence
+     * @return an infinite IntSequence that always returns the specified constant value
+     */
+    static IntSequence constant(int value) {
+        return new IntSequence() {
+            @Override
+            public int next() {
+                return value;
+            }
+
+            @Override
+            public boolean hasNext() {
+                return true;
+            }
+        };
+    }
 }
