@@ -1,4 +1,6 @@
-package lab3.Measurable;
+package lab3.Employment;
+
+import lab3.Measurable.Measurable;
 
 /**
  * Represents an employee with a name and salary.
@@ -6,10 +8,14 @@ package lab3.Measurable;
  * using the employee's salary as the measurement value.
  */
 public class Employee implements Measurable {
-    /** The name of the employee. */
+    /**
+     * The name of the employee.
+     */
     String name;
 
-    /** The salary of the employee. */
+    /**
+     * The salary of the employee.
+     */
     double salary;
 
     /**

@@ -7,20 +7,6 @@ package lab3.IntSequence;
 public interface IntSequence {
 
     /**
-     * Returns the next integer in the sequence.
-     *
-     * @return the next integer in the sequence
-     */
-    int next();
-
-    /**
-     * Checks if there are more integers available in the sequence.
-     *
-     * @return true if there are more integers, false otherwise
-     */
-    boolean hasNext();
-
-    /**
      * Creates an IntSequence from the given array of integers.
      *
      * @param values the integers to include in the sequence
@@ -61,4 +47,18 @@ public interface IntSequence {
             }
         };
     }
+
+    /**
+     * Returns the next integer in the sequence.
+     *
+     * @return the next integer in the sequence
+     */
+    int next();
+
+    /**
+     * Checks if there are more integers available in the sequence.
+     *
+     * @return true if there are more integers, false otherwise
+     */
+    boolean hasNext();
 }

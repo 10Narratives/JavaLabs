@@ -17,8 +17,8 @@ public final class FileManager {
      * is thrown. Otherwise, it returns an array of file names that end with the specified extension.</p>
      *
      * @param directoryPath the path to the directory to filter files from
-     * @param extension      the file extension to filter by (e.g., "txt", "jpg")
-     * @return               an array of file names in the directory that match the specified extension
+     * @param extension     the file extension to filter by (e.g., "txt", "jpg")
+     * @return an array of file names in the directory that match the specified extension
      * @throws IllegalArgumentException if the provided path is not an existing directory
      */
     public static String[] filter(String directoryPath, String extension) {

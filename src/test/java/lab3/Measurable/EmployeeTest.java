@@ -1,5 +1,6 @@
 package lab3.Measurable;
 
+import lab3.Employment.Employee;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
