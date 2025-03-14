@@ -19,6 +19,9 @@ public final class Stuff {
      * @throws NullPointerException if the provided list is null
      */
     public Stuff(ArrayList<Employee> employees) {
+        if (employees == null) {
+            throw  new NullPointerException("cannot construct Stuff instance: provided list is null");
+        }
         this.employees = employees;
     }
 
