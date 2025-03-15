@@ -1,15 +1,13 @@
 package lab2.Point;
 
-/**
- * Represents a modifiable mathematical point in Cartesian space.
- */
+
+/// Represents a modifiable mathematical point.
 public final class PointModifiable {
     private double x;
     private double y;
 
-    /**
-     * Constructs a new {@code PointModifiable} instance at the origin (0.0, 0.0).
-     */
+
+    /// Constructs a new {@code PointModifiable} instance at the origin (0.0, 0.0).
     public PointModifiable() {
         this.x = 0.0;
         this.y = 0.0;
@@ -26,20 +24,12 @@ public final class PointModifiable {
         this.y = y;
     }
 
-    /**
-     * Retrieves the current x-coordinate of this {@code PointModifiable} instance.
-     *
-     * @return the current x-coordinate of the point
-     */
+    /// Retrieves the current x-coordinate of this {@code PointModifiable} instance.
     public double getX() {
         return this.x;
     }
 
-    /**
-     * Retrieves the current y-coordinate of this {@code PointModifiable} instance.
-     *
-     * @return the current y-coordinate of the point
-     */
+    /// Retrieves the current y-coordinate of this {@code PointModifiable} instance.
     public double getY() {
         return this.y;
     }

@@ -1,8 +1,7 @@
 package lab2.Point;
 
-/**
- * A factory class for creating instances of {@code Point} using different coordinate systems.
- */
+
+/// A factory class for creating instances of {@code Point} using different coordinate systems.
 public class PointFabric {
 
     /**

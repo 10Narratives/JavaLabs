@@ -1,15 +1,12 @@
 package lab2.Point;
 
-/**
- * Represents a mathematical point in Cartesian space.
- */
+
+/// Represents a mathematical point.
 public final class Point {
     private final double x;
     private final double y;
 
-    /**
-     * Constructs a new {@code Point} instance at the origin (0.0, 0.0).
-     */
+    ///Constructs a new {@code Point} instance at the origin (0.0, 0.0).
     public Point() {
         this.x = 0.0;
         this.y = 0.0;
@@ -26,20 +23,14 @@ public final class Point {
         this.y = y;
     }
 
-    /**
-     * Retrieves the x-coordinate of this {@code Point} instance.
-     *
-     * @return the x-coordinate of the point
-     */
+
+    /// Retrieves the x-coordinate of this {@code Point} instance.
     public double getX() {
         return this.x;
     }
 
-    /**
-     * Retrieves the y-coordinate of this {@code Point} instance.
-     *
-     * @return the y-coordinate of the point
-     */
+
+    ///Retrieves the y-coordinate of this {@code Point} instance.
     public double getY() {
         return this.y;
     }
