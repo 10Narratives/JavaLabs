@@ -3,11 +3,7 @@ package lab2.RandomNumber;
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
- * A utility class for generating random elements from collections or arrays.
- * This class provides static methods to retrieve a random element from an {@code ArrayList<Integer>}
- * or an {@code int[]}.
- */
+/// A utility class for generating random elements from collections or arrays.
 public class RandomNumber {
     /**
      * Retrieves a random element from the given {@code ArrayList<Integer>}.
