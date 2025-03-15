@@ -2,9 +2,7 @@ package lab2.Car;
 
 import lab2.Point.PointModifiable;
 
-/**
- * Represents a car that can move to specified destinations based on its fuel level and fuel consumption rate.
- */
+/// Represents a car that can move to specified destinations based on its fuel level and fuel consumption rate.
 public class Car {
     private final PointModifiable position;
     private final double fuelCosts;
@@ -27,29 +25,17 @@ public class Car {
         this.position = new PointModifiable();
     }
 
-    /**
-     * Retrieves the current position of the car.
-     *
-     * @return the current position as a {@code PointModifiable} object
-     */
+    /// Retrieves the current position of the car.
     public PointModifiable getPosition() {
         return position;
     }
 
-    /**
-     * Retrieves the current fuel level of the car.
-     *
-     * @return the current fuel level
-     */
+    /// Retrieves the current fuel level of the car.
     public double getRemainingFuel() {
         return remainingFuel;
     }
 
-    /**
-     * Retrieves the fuel consumption rate of the car.
-     *
-     * @return the fuel consumption rate (fuel cost per unit distance)
-     */
+    /// Retrieves the fuel consumption rate of the car.
     public double getFuelCosts() {
         return fuelCosts;
     }
