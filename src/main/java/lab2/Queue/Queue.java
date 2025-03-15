@@ -2,40 +2,24 @@ package lab2.Queue;
 
 import java.util.NoSuchElementException;
 
-/**
- * A simple implementation of a queue data structure using a singly linked list.
- * This class supports operations such as pushing elements to the queue, popping elements from the queue,
- * retrieving the size of the queue, and iterating over its elements.
- */
+///  Implementation of a queue data structure using a singly linked list.
 public class Queue {
 
     private Node head;
     private Node tail;
     private int size;
 
-    /**
-     * Returns an iterator for traversing the elements of the queue.
-     *
-     * @return a new iterator instance
-     */
+    /// Returns an iterator for traversing the elements of the queue.
     public Iterator iterator() {
         return new Iterator();
     }
 
-    /**
-     * Retrieves the number of elements currently in the queue.
-     *
-     * @return the size of the queue
-     */
-    public int getSize() {
+    /// Retrieves the number of elements currently in the queue.
+    public int size() {
         return size;
     }
 
-    /**
-     * Adds a new element to the end of the queue.
-     *
-     * @param x the element to be added to the queue
-     */
+    /// Adds a new element {@code x} to the end of the queue.
     public void push(String x) {
         Node node = new Node(x);
         if (this.head == null) {
@@ -64,35 +48,23 @@ public class Queue {
         return value;
     }
 
-    /**
-     * A node in the singly linked list used to implement the queue.
-     * Each node contains a value and a reference to the next node in the list.
-     */
+    /// A node in the singly linked list used to implement the queue.
     static class Node {
         String value;
         Node next;
 
-        /**
-         * Constructs a new node with the specified value.
-         *
-         * @param value the value to be stored in the node
-         */
+        /// Constructs a new node with the specified {@code value}.
         public Node(String value) {
             this.value = value;
             this.next = null;
         }
     }
 
-    /**
-     * An iterator for traversing the elements of the queue.
-     * This iterator allows sequential access to the elements in the queue.
-     */
+    /// An iterator for traversing the elements of the queue.
     public class Iterator {
         private Node current;
 
-        /**
-         * Constructs a new iterator starting at the head of the queue.
-         */
+        /// Constructs a new iterator starting at the head of the queue.
         public Iterator() {
             this.current = head;
         }
