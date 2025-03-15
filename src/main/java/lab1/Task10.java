@@ -1,31 +1,28 @@
 package lab1;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Task10 {
-    private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-    public static String getRandom(int size) {
-        Random random = new Random();
-        StringBuilder builder = new StringBuilder(size);
-
-        for (int i = 0; i < size; i++) {
-            int randomIndex = random.nextInt(CHARACTERS.length());
-            char randomChar = CHARACTERS.charAt(randomIndex);
-            builder.append(randomChar);
-        }
-
-        return builder.toString();
-    }
-
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int targetLen = scanner.nextInt();
+
         Random random = new Random();
-        long randomLong = random.nextLong();
+        StringBuilder builder = new StringBuilder(targetLen);
+        while (builder.length() < targetLen) {
+            long randomLong = random.nextLong();
+            if (randomLong < 0) randomLong *= -1;
+            String str = Long.toString(randomLong, 36);
+            for (int i = 0; i < str.length(); i++) {
+                builder.append(str.charAt(i));
+                if (builder.length() == targetLen) {
+                    break;
+                }
+            }
+        }
+        String generated = builder.toString();
+        System.out.println(generated + " " + generated.length());
 
-        String string = Long.toString(randomLong, 36);
-        System.out.println(string);
-
-        string = getRandom(5);
-        System.out.println(string);
     }
 }
