@@ -1,10 +1,6 @@
-package lab2.RandomNumber;
+package lab2.random_number;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class RandomNumberTest {
     @Test

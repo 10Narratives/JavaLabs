@@ -1,6 +1,6 @@
-package lab2.Car;
+package lab2.car;
 
-import lab2.Point.PointModifiable;
+import lab2.point.PointModifiable;
 
 /// Represents a car that can move to specified destinations based on its fuel level and fuel consumption rate.
 public class Car {
@@ -16,8 +16,12 @@ public class Car {
      * @throws IllegalArgumentException if {@code fuelCosts} is zero
      */
     public Car(double fuelLevel, double fuelCosts) {
-        if (fuelCosts == 0) {
-            throw new IllegalArgumentException("Fuel costs cannot be equal to zero");
+        if (fuelLevel < 0) {
+            throw new IllegalArgumentException("Fuel level cannot be non positive");
+        }
+
+        if (fuelCosts < 1) {
+            throw new IllegalArgumentException("Fuel costs cannot be non positive");
         }
 
         this.remainingFuel = fuelLevel;
@@ -48,16 +52,11 @@ public class Car {
      * @return {@code true} if the destination was reached, {@code false} otherwise
      */
     public boolean moveTo(PointModifiable destination) {
-        boolean wasReached = false;
         double distance = Math.sqrt(Math.pow(this.position.getX() - destination.getX(), 2)
                 + Math.pow(this.position.getY() - destination.getY(), 2));
-        double available = this.remainingFuel / this.fuelCosts;
-        if (distance < available) {
-            wasReached = true;
-            this.remainingFuel -= distance * this.fuelCosts;
-            this.position.translate(destination.getX() - this.position.getX(),
-                    destination.getY() - this.position.getY());
-        }
-        return wasReached;
+        double requiredFuel = distance / this.fuelCosts;
+        boolean reachable = requiredFuel <= this.remainingFuel;
+        this.remainingFuel = reachable ? this.remainingFuel - requiredFuel : 0;
+        return reachable;
     }
 }

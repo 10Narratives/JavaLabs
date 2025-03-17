@@ -1,4 +1,4 @@
-package lab2.RandomNumber;
+package lab2.random_number;
 
 import java.util.ArrayList;
 import java.util.Random;

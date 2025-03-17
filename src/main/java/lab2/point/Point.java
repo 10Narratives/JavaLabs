@@ -1,5 +1,4 @@
-package lab2.Point;
-
+package lab2.point;
 
 /// Represents a mathematical point.
 public final class Point {

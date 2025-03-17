@@ -21,8 +21,8 @@ public class Task10 {
                 }
             }
         }
+
         String generated = builder.toString();
         System.out.println(generated + " " + generated.length());
-
     }
 }

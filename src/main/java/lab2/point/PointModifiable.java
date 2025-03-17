@@ -1,10 +1,10 @@
-package lab2.Point;
+package lab2.point;
 
 
 /// Represents a modifiable mathematical point.
 public final class PointModifiable {
-    private double x;
-    private double y;
+    private double x = 0.0;
+    private double y = 0.0;
 
 
     /// Constructs a new {@code PointModifiable} instance at the origin (0.0, 0.0).

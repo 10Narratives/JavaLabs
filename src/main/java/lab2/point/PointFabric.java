@@ -1,8 +1,11 @@
-package lab2.Point;
+package lab2.point;
 
 
 /// A factory class for creating instances of {@code Point} using different coordinate systems.
 public class PointFabric {
+    // It is not good
+
+    private PointFabric() {}
 
     /**
      * Creates a new {@code Point} instance from Cartesian coordinates.

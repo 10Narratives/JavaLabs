@@ -1,4 +1,4 @@
-package lab2.Queue;
+package lab2.queue;
 
 import java.util.NoSuchElementException;
 
@@ -92,5 +92,7 @@ public class Queue {
             current = current.next;
             return data;
         }
+
+        // TODO: make implementation remove()
     }
 }

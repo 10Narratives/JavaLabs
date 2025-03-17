@@ -1,4 +1,4 @@
-package lab2.Queue;
+package lab2.queue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
