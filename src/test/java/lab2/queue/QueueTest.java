@@ -3,81 +3,100 @@ package lab2.queue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.NoSuchElementException;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class QueueTest {
-
-    private Queue queue;
-
-    @BeforeEach
-    void setUp() {
-        queue = new Queue();
+    @Test
+    void testAdd() {
+        Queue queue = new Queue();
+        queue.add("A");
+        assertEquals(1, queue.size());
+        queue.add("B");
+        assertEquals(2,queue.size());
+        assertEquals("AB", queue.toString());
     }
 
     @Test
-    void testPushAndPop() {
-        queue.push("A");
-        queue.push("B");
-        queue.push("C");
+    void testRemove() {
+        Queue queue = new Queue();
+        queue.add("A");
+        queue.add("A");
+        queue.add("A");
 
-        assertEquals(3, queue.size(), "Queue size should be 3 after pushing 3 elements");
+        while (!queue.isEmpty()) {
+            String removedValue = queue.remove();
+            assertEquals("A", removedValue);
+        }
 
-        assertEquals("A", queue.pop(), "First pop should return 'A'");
-        assertEquals("B", queue.pop(), "Second pop should return 'B'");
-        assertEquals("C", queue.pop(), "Third pop should return 'C'");
-
-        assertEquals(0, queue.size(), "Queue size should be 0 after popping all elements");
-    }
-
-    @Test
-    void testPopFromEmptyQueue() {
-        Exception exception = assertThrows(IndexOutOfBoundsException.class, () -> queue.pop());
-        assertEquals("cannot pop from empty queue", exception.getMessage());
-    }
-
-    @Test
-    void testPushAndSize() {
-        assertEquals(0, queue.size(), "Initial queue size should be 0");
-
-        queue.push("X");
-        assertEquals(1, queue.size(), "Queue size should be 1 after pushing one element");
-
-        queue.push("Y");
-        assertEquals(2, queue.size(), "Queue size should be 2 after pushing two elements");
+        String emptyString = queue.remove();
+        assertNull(emptyString);
     }
 
     @Test
     void testIterator() {
-        queue.push("A");
-        queue.push("B");
-        queue.push("C");
+        Queue queue = new Queue();
+        queue.add("A");
+        queue.add("B");
+        queue.add("C");
 
         Queue.Iterator iterator = queue.iterator();
-        assertTrue(iterator.hasNext(), "Iterator should have next element");
-        assertEquals("A", iterator.next(), "First element should be 'A'");
-        assertEquals("B", iterator.next(), "Second element should be 'B'");
-        assertEquals("C", iterator.next(), "Third element should be 'C'");
-        assertFalse(iterator.hasNext(), "Iterator should not have next element after traversing all elements");
+        assertTrue(iterator.hasNext());
+        assertEquals("A", iterator.next());
+        assertEquals("B", iterator.next());
+        assertEquals("C", iterator.next());
+        assertFalse(iterator.hasNext());
     }
 
     @Test
-    void testIteratorNoSuchElementException() {
+    void testIteratorRemove_HeadElement() {
+        Queue queue = new Queue();
+        queue.add("A");
+        queue.add("B");
+        queue.add("C");
+
         Queue.Iterator iterator = queue.iterator();
-        Exception exception = assertThrows(NoSuchElementException.class, iterator::next);
-        assertEquals("cannot get next element from queue by null pointer", exception.getMessage());
+        iterator.next();
+        iterator.remove();
+        assertEquals("BC", queue.toString());
     }
 
     @Test
-    void testSingleElementQueue() {
-        queue.push("OnlyElement");
+    void testIteratorRemove_OneElement() {
+        Queue queue = new Queue();
+        queue.add("A");
 
-        assertEquals(1, queue.size(), "Queue size should be 1 after pushing one element");
-        assertEquals("OnlyElement", queue.pop(), "Popping should return the only element");
-        assertEquals(0, queue.size(), "Queue size should be 0 after popping the only element");
+        Queue.Iterator iterator = queue.iterator();
+        iterator.next();
+        iterator.remove();
+        assertEquals("", queue.toString());
+    }
 
-        Exception exception = assertThrows(IndexOutOfBoundsException.class, () -> queue.pop());
-        assertEquals("cannot pop from empty queue", exception.getMessage());
+    @Test
+    void testIteratorRemove_NonHeadElement() {
+        Queue queue = new Queue();
+        queue.add("A");
+        queue.add("B");
+        queue.add("C");
+
+        Queue.Iterator iterator = queue.iterator();
+        iterator.next();
+        iterator.next();
+        iterator.remove();
+        assertEquals("AC", queue.toString());
+    }
+
+    @Test
+    void testIteratorRemove_LastElement() {
+        Queue queue = new Queue();
+        queue.add("A");
+        queue.add("B");
+        queue.add("C");
+
+        Queue.Iterator iterator = queue.iterator();
+        iterator.next();
+        iterator.next();
+        iterator.next();
+        iterator.remove();
+        assertEquals("AB", queue.toString());
     }
 }

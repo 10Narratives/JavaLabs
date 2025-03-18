@@ -2,28 +2,14 @@ package lab2.queue;
 
 import java.util.NoSuchElementException;
 
-///  Implementation of a queue data structure using a singly linked list.
 public class Queue {
-
-    private Node head;
-    private Node tail;
+    private Node head, tail;
     private int size;
 
-    /// Returns an iterator for traversing the elements of the queue.
-    public Iterator iterator() {
-        return new Iterator();
-    }
-
-    /// Retrieves the number of elements currently in the queue.
-    public int size() {
-        return size;
-    }
-
-    /// Adds a new element {@code x} to the end of the queue.
-    public void push(String x) {
+    public void add(String x) {
         Node node = new Node(x);
         if (this.head == null) {
-            head = tail = node;
+            this.head = this.tail = node;
         } else {
             this.tail.next = node;
             this.tail = this.tail.next;
@@ -31,68 +17,93 @@ public class Queue {
         this.size++;
     }
 
-    /**
-     * Removes and returns the element at the front of the queue.
-     *
-     * @return the value of the element removed from the front of the queue
-     * @throws IndexOutOfBoundsException if the queue is empty
-     */
-    public String pop() {
-        if (this.size == 0) {
-            throw new IndexOutOfBoundsException("cannot pop from empty queue");
+    public String remove() {
+        if (this.head == null) {
+            return null;
         }
-        String value = this.head.value;
-        this.head = this.head.next;
-        if (this.head == null) this.tail = null;
+        String removing = this.head.value;
+        if (head == tail)
+            head = tail = null;
+        else
+            this.head = this.head.next;
         this.size--;
-        return value;
+        return removing;
     }
 
-    /// A node in the singly linked list used to implement the queue.
+    public boolean isEmpty() {
+        return this.size == 0;
+    }
+
+    public int size() {
+        return this.size;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        Node current = this.head;
+        while (current != null) {
+            builder.append(current.value);
+            current = current.next;
+        }
+        return builder.toString();
+    }
+
+    public Iterator iterator() {
+        return new Iterator();
+    }
+
     static class Node {
         String value;
         Node next;
 
-        /// Constructs a new node with the specified {@code value}.
         public Node(String value) {
             this.value = value;
-            this.next = null;
         }
     }
 
-    /// An iterator for traversing the elements of the queue.
     public class Iterator {
-        private Node current;
+        private Node pointer, last;
 
-        /// Constructs a new iterator starting at the head of the queue.
         public Iterator() {
-            this.current = head;
+            this.pointer = head;
+            this.last = null;
         }
 
-        /**
-         * Checks if there are more elements to iterate over.
-         *
-         * @return {@code true} if there are more elements, {@code false} otherwise
-         */
         public boolean hasNext() {
-            return current != null;
+            return this.pointer != null;
         }
 
-        /**
-         * Retrieves the next element in the queue and advances the iterator.
-         *
-         * @return the value of the next element in the queue
-         * @throws NoSuchElementException if there are no more elements to iterate over
-         */
         public String next() {
-            if (current == null) {
-                throw new NoSuchElementException("cannot get next element from queue by null pointer");
-            }
-            String data = current.value;
-            current = current.next;
-            return data;
+            String value = pointer.value;
+            last = pointer;
+            pointer = pointer.next;
+            return value;
         }
 
-        // TODO: make implementation remove()
+        public void remove() {
+            if (last == null)
+                return;
+
+            if (this.last == Queue.this.head) {
+                Queue.this.head = Queue.this.head.next;
+                if (Queue.this.head == null) {
+                    Queue.this.tail = null;
+                }
+            } else {
+                Node prev = Queue.this.head;
+                while (prev != null && prev.next != this.last) {
+                    prev = prev.next;
+                }
+                if (prev != null) {
+                    prev.next = this.last.next;
+                    if (this.last == Queue.this.tail) {
+                        Queue.this.tail = prev;
+                    }
+                }
+            }
+            Queue.this.size--;
+            this.last = null;
+        }
     }
 }
