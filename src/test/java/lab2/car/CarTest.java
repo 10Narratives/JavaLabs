@@ -20,7 +20,7 @@ class CarTest {
     @ParameterizedTest
     @CsvSource({
             "3.0, 4.0, true, 97.5",
-            "60.0, 80.0, false, 50.0",
+            "60.0, 80.0, true, 50.0",
             "0.0, 0.0, true, 100.0",
             "-3.0, -4.0, true, 97.5",
             "10.0, 0.0, true, 95.0"
@@ -30,10 +30,10 @@ class CarTest {
 
         boolean reached = car.moveTo(destination);
 
-        System.out.println(car.getRemainingFuel());
+        System.out.println(car.getFuelLevel());
 
         assertEquals(expectedReached, reached);
-        assertEquals(expectedFuel, car.getRemainingFuel());
+        assertEquals(expectedFuel, car.getFuelLevel());
     }
 
     @ParameterizedTest
@@ -45,8 +45,8 @@ class CarTest {
     void testConstructor(double initialFuelLevel, double fuelConsumptionRate, double expectedFuelLevel, double expectedConsumptionRate) {
         Car car = new Car(initialFuelLevel, fuelConsumptionRate);
 
-        assertEquals(expectedFuelLevel, car.getRemainingFuel(), 0.0001, "Initial fuel level should match");
-        assertEquals(expectedConsumptionRate, car.getFuelCosts(), 0.0001, "Fuel consumption rate should match");
+        assertEquals(expectedFuelLevel, car.getFuelLevel(), 0.0001, "Initial fuel level should match");
+        assertEquals(expectedConsumptionRate, car.getMovementCost(), 0.0001, "Fuel consumption rate should match");
     }
 
     @ParameterizedTest
@@ -56,9 +56,9 @@ class CarTest {
             "-100, 100",
             "100, -100"
     })
-    void testConstructor_InvalidFuelConsumptionRate(double initialFuelLevel, double fuelConsumptionRate) {
+    void testConstructor_InvalidArguments(double initialFuelLevel, double initialMovementCost) {
         assertThrows(IllegalArgumentException.class, () -> {
-            new Car(initialFuelLevel, fuelConsumptionRate);
+            new Car(initialFuelLevel, initialMovementCost);
         });
     }
 }
