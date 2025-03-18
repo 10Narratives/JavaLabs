@@ -1,6 +1,6 @@
-package lab2.abstract_factory.japanese;
+package lab2.creational_patterns.abstract_factory.japanese;
 
-import lab2.abstract_factory.interfaces.MainCourse;
+import lab2.creational_patterns.abstract_factory.interfaces.MainCourse;
 
 public class JapaneseMainCourse implements MainCourse {
     private final String name;

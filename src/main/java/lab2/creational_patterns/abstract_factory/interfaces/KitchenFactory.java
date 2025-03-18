@@ -1,4 +1,4 @@
-package lab2.abstract_factory.interfaces;
+package lab2.creational_patterns.abstract_factory.interfaces;
 
 public interface KitchenFactory {
     FirstCourse createFirstCourse();

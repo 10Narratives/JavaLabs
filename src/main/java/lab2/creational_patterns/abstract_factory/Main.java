@@ -1,11 +1,11 @@
-package lab2.abstract_factory;
+package lab2.creational_patterns.abstract_factory;
 
-import lab2.abstract_factory.interfaces.Dessert;
-import lab2.abstract_factory.interfaces.FirstCourse;
-import lab2.abstract_factory.interfaces.KitchenFactory;
-import lab2.abstract_factory.interfaces.MainCourse;
-import lab2.abstract_factory.italian.ItalianKitchenFactory;
-import lab2.abstract_factory.japanese.JapaneseKitchenFactory;
+import lab2.creational_patterns.abstract_factory.interfaces.Dessert;
+import lab2.creational_patterns.abstract_factory.interfaces.FirstCourse;
+import lab2.creational_patterns.abstract_factory.interfaces.KitchenFactory;
+import lab2.creational_patterns.abstract_factory.interfaces.MainCourse;
+import lab2.creational_patterns.abstract_factory.italian.ItalianKitchenFactory;
+import lab2.creational_patterns.abstract_factory.japanese.JapaneseKitchenFactory;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
-package lab2.abstract_factory.italian;
+package lab2.creational_patterns.abstract_factory.italian;
 
-import lab2.abstract_factory.interfaces.MainCourse;
+import lab2.creational_patterns.abstract_factory.interfaces.MainCourse;
 
 public class ItalianMainCourse implements MainCourse {
     private final String name;

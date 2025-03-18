@@ -1,9 +1,9 @@
-package lab2.abstract_factory.italian;
+package lab2.creational_patterns.abstract_factory.italian;
 
-import lab2.abstract_factory.interfaces.Dessert;
-import lab2.abstract_factory.interfaces.FirstCourse;
-import lab2.abstract_factory.interfaces.KitchenFactory;
-import lab2.abstract_factory.interfaces.MainCourse;
+import lab2.creational_patterns.abstract_factory.interfaces.Dessert;
+import lab2.creational_patterns.abstract_factory.interfaces.FirstCourse;
+import lab2.creational_patterns.abstract_factory.interfaces.KitchenFactory;
+import lab2.creational_patterns.abstract_factory.interfaces.MainCourse;
 
 public class ItalianKitchenFactory implements KitchenFactory {
     @Override

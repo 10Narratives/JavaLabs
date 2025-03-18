@@ -1,9 +1,9 @@
-package lab2.abstract_factory.japanese;
+package lab2.creational_patterns.abstract_factory.japanese;
 
-import lab2.abstract_factory.interfaces.Dessert;
-import lab2.abstract_factory.interfaces.FirstCourse;
-import lab2.abstract_factory.interfaces.KitchenFactory;
-import lab2.abstract_factory.interfaces.MainCourse;
+import lab2.creational_patterns.abstract_factory.interfaces.Dessert;
+import lab2.creational_patterns.abstract_factory.interfaces.FirstCourse;
+import lab2.creational_patterns.abstract_factory.interfaces.KitchenFactory;
+import lab2.creational_patterns.abstract_factory.interfaces.MainCourse;
 
 public class JapaneseKitchenFactory implements KitchenFactory {
     @Override
