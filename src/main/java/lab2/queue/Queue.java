@@ -1,7 +1,5 @@
 package lab2.queue;
 
-import java.util.NoSuchElementException;
-
 public class Queue {
     private Node head, tail;
     private int size;
@@ -41,10 +39,9 @@ public class Queue {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        Node current = this.head;
-        while (current != null) {
-            builder.append(current.value);
-            current = current.next;
+        Iterator iterator = this.iterator();
+        while (iterator.hasNext()) {
+            builder.append(iterator.next()).append(" ");
         }
         return builder.toString();
     }
@@ -63,49 +60,36 @@ public class Queue {
     }
 
     public class Iterator {
-        private Node pointer, last;
+        private Node curr, last, lastLast;
+        private boolean canRemove = false;
 
         public Iterator() {
-            this.pointer = head;
+            this.curr = head;
             this.last = null;
+            this.lastLast = null;
         }
 
         public boolean hasNext() {
-            return this.pointer != null;
+            return this.curr != null;
         }
 
         public String next() {
-            String value = pointer.value;
-            last = pointer;
-            pointer = pointer.next;
+            String value = curr.value;
+            lastLast = last;
+            last = curr;
+            curr = curr.next;
+            canRemove = true;
             return value;
         }
 
         public void remove() {
-            if (last == null)
-                return;
-
-            Node nextElement = this.last.next;
-
-            if (this.last == Queue.this.head) {
-                Queue.this.head = Queue.this.head.next;
-                if (Queue.this.head == null) {
-                    Queue.this.tail = null;
-                }
+            if (lastLast == null) {
+                curr = curr.next;
             } else {
-                Node prev = Queue.this.head;
-                while (prev != null && prev.next != this.last) {
-                    prev = prev.next;
-                }
-                if (prev != null) {
-                    prev.next = this.last.next;
-                    if (this.last == Queue.this.tail) {
-                        Queue.this.tail = prev;
-                    }
-                }
+                lastLast.next = curr;
             }
-            Queue.this.size--;
-            this.last = nextElement;
+            last = lastLast;
+            canRemove = false;
         }
     }
 }

@@ -2,6 +2,7 @@ package lab2.car;
 
 import lab2.point.PointModifiable;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -23,17 +24,31 @@ class CarTest {
             "60.0, 80.0, true, 50.0",
             "0.0, 0.0, true, 100.0",
             "-3.0, -4.0, true, 97.5",
-            "10.0, 0.0, true, 95.0"
+            "10.0, 0.0, true, 95.0",
     })
     void testMoveTo(double destinationX, double destinationY, boolean expectedReached, double expectedFuel) {
         PointModifiable destination = new PointModifiable(destinationX, destinationY);
 
         boolean reached = car.moveTo(destination);
 
-        System.out.println(car.getFuelLevel());
+        assertEquals(expectedReached, reached);
+        assertEquals(expectedFuel, car.getFuelLevel());
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "400.0, 0.0, false, 0.0",
+            "0.0, 400.0, false, 0.0",
+            "300.0, 400.0, false, 0.0"
+    })
+    void testMoveTo_Unreachable(double destinationX, double destinationY, boolean expectedReached, double expectedFuel) {
+        PointModifiable destination = new PointModifiable(destinationX, destinationY);
+
+        boolean reached = car.moveTo(destination);
 
         assertEquals(expectedReached, reached);
         assertEquals(expectedFuel, car.getFuelLevel());
+        System.out.println(car.getPosition().getX() + " " + car.getPosition().getY());
     }
 
     @ParameterizedTest

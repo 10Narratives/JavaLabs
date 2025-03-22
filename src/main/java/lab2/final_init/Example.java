@@ -8,7 +8,7 @@ public class Example {
         this.a = a;
     }
 
-    public final int b;
+    private final int b;
     {
         this.b = 100;
     }
