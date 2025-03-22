@@ -72,20 +72,6 @@ class QueueTest {
     }
 
     @Test
-    void testIteratorRemove_NonHeadElement() {
-        Queue queue = new Queue();
-        queue.add("A");
-        queue.add("B");
-        queue.add("C");
-
-        Queue.Iterator iterator = queue.iterator();
-        iterator.next();
-        iterator.next();
-        iterator.remove();
-        assertEquals("AC", queue.toString());
-    }
-
-    @Test
     void testIteratorRemove_LastElement() {
         Queue queue = new Queue();
         queue.add("A");

@@ -85,6 +85,8 @@ public class Queue {
             if (last == null)
                 return;
 
+            Node nextElement = this.last.next;
+
             if (this.last == Queue.this.head) {
                 Queue.this.head = Queue.this.head.next;
                 if (Queue.this.head == null) {
@@ -103,7 +105,7 @@ public class Queue {
                 }
             }
             Queue.this.size--;
-            this.last = null;
+            this.last = nextElement;
         }
     }
 }
