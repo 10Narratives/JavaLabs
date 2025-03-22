@@ -1,4 +1,4 @@
-package lab3.Greeter;
+package lab3.greeter;
 
 /**
  * The {@code Greeter} class represents a runnable task that prints greeting messages.

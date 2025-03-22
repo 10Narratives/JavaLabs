@@ -1,8 +1,12 @@
 package lab2.queue;
 
+import java.util.Queue;
+
 public class Main {
     public static void main(String[] args) {
-        java.util.Queue<Integer> q1;
-        Queue q2;
+         Queue<Integer> queue;
+         lab2.queue.Queue queue2;
+
+
     }
 }

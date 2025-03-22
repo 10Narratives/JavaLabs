@@ -1,4 +1,4 @@
-package lab3.IntSequence;
+package lab3.int_sequence;
 
 import java.util.Random;
 

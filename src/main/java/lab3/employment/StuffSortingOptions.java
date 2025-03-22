@@ -1,4 +1,4 @@
-package lab3.Employment;
+package lab3.employment;
 
 /**
  * Defines the sorting options for the {@link Stuff} class.

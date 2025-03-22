@@ -1,4 +1,4 @@
-package lab3.LuckySort;
+package lab3.lucky_sort;
 
 import java.util.ArrayList;
 import java.util.Collections;

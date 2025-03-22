@@ -1,4 +1,4 @@
-package lab3.Employment;
+package lab3.employment;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;

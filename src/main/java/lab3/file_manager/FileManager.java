@@ -1,4 +1,4 @@
-package lab3.FileManager;
+package lab3.file_manager;
 
 import java.io.File;
 import java.util.Arrays;

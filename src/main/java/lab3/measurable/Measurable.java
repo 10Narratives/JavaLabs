@@ -1,4 +1,4 @@
-package lab3.Measurable;
+package lab3.measurable;
 
 /**
  * Represents an entity that can provide a measurement.

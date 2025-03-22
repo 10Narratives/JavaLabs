@@ -1,4 +1,4 @@
-package lab3.IntSequence;
+package lab3.int_sequence;
 
 /**
  * Represents a sequence of integers with methods to retrieve the next integer

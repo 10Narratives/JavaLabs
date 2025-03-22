@@ -1,4 +1,4 @@
-package lab3.FileManager;
+package lab3.file_manager;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,6 +1,6 @@
-package lab3.Employment;
+package lab3.employment;
 
-import lab3.Measurable.Measurable;
+import lab3.measurable.Measurable;
 
 /**
  * Represents an employee with a name and salary.

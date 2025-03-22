@@ -1,4 +1,4 @@
-package lab3.LuckySort;
+package lab3.lucky_sort;
 
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
